@@ -32,10 +32,7 @@ public class CollectionTestSuite {
         // Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> input = new ArrayList<>();
-        input.add(1);
-        input.add(3);
-        input.add(5);
-        input.add(7);
+
 
         ArrayList<Integer> expected = new ArrayList<>();
 
