@@ -30,12 +30,20 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         // Given
-        ArrayList<Integer> base = new ArrayList<>();
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(3);
+        input.add(5);
+        input.add(7);
+
+        ArrayList<Integer> expected = new ArrayList<>();
+
         // When
-        boolean result = base.isEmpty();
-        System.out.println("Testing " + result);
+        ArrayList<Integer> output = exterminator.exterminate(input);
+        System.out.println("Testing " + expected);
         // Then
-        Assert.assertTrue("OK", result);
+        Assert.assertEquals(expected, output);
     }
 
     @Test
