@@ -2,8 +2,6 @@ package com.kodilla.testing.shape;
 
 import org.junit.*;
 
-import java.util.ArrayList;
-
 public class ShapeCollectorTestSuite {
 
     private static int testCounter = 0;
@@ -69,15 +67,10 @@ public class ShapeCollectorTestSuite {
         Shape triangle = new Triangle(6, 6);
         shapeCollector.addFigure(square);
         shapeCollector.addFigure(triangle);
-        ArrayList<Shape> figures = new ArrayList<Shape>();
-        figures.add(square);
-        figures.add(triangle);
         // When
-        boolean figureOne = figures.contains(square);
-        boolean figureTwo = figures.contains(triangle);
+        String expected = triangle.getShapeName() + " " + square.getShapeName();
         // Then
-        Assert.assertTrue(figureOne);
-        Assert.assertTrue(figureTwo);
+        Assert.assertEquals("Triangle Square", expected);
     }
 
     @Test
@@ -88,6 +81,6 @@ public class ShapeCollectorTestSuite {
         double output = square.getField();
         double expected = 25;
         // Then
-        Assert.assertEquals(output, expected);
+        Assert.assertEquals(output, expected, 0.1);
     }
 }

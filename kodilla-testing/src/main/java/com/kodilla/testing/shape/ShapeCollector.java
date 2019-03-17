@@ -16,22 +16,24 @@ public class ShapeCollector {
     }
 
     public void addFigure(Shape shape) {
-        // it doesn't do anything yet
+        figures.add(shape);
     }
 
     public void removeFigure(Shape shape) {
-        // it doesn't do anything yet
+        if (figures.contains(shape)) {
+            figures.remove(shape);
+        }
     }
 
     public Shape getFigure(int n) {
-      // it doesn't do anything yet
-      return null;
+        figures.get(n);
+        return shape;
     }
 
-    public Shape showFigures() {
-        // it doesn't do anything yet
-        return null;
+    public String showFigures() {
+        if (figures.contains(shape)) {
+            return shape.getShapeName();
+        } else return null;
     }
-
 
 }
