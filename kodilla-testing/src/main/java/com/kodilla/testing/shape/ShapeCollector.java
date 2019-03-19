@@ -1,18 +1,13 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ShapeCollector {
 
-    Shape shape;
     private ArrayList<Shape> figures = new ArrayList<Shape>();
 
     public ShapeCollector() {
-
-    }
-
-    public Shape getShape() {
-        return shape;
     }
 
     public void addFigure(Shape shape) {
@@ -27,13 +22,15 @@ public class ShapeCollector {
 
     public Shape getFigure(int n) {
         figures.get(n);
-        return shape;
+        return getFigure(n);
     }
 
     public String showFigures() {
-        if (figures.contains(shape)) {
-            return shape.getShapeName();
-        } else return null;
+        for (int i = 0; i < figures.size(); i++) {
+            if (figures.contains(figures.get(0))) {
+                return figures.get(0).getShapeName();
+            }
+        }
+        return null;
     }
-
 }
