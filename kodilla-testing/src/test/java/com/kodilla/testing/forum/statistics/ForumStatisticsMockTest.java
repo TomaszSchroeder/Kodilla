@@ -1,37 +1,118 @@
-//package com.kodilla.testing.forum.statistics;
-//
-//import com.kodilla.testing.forum.statistics.Statistics;
-//import com.kodilla.testing.forum.statistics.StatisticsMonitor;
-//
-//
-//import org.junit.*;
-//
-//import java.util.ArrayList;
-//
-//import java.util.List;
-//
-//import static org.mockito.Mockito.mock;
-//import static org.mockito.Mockito.when;
-//
-//public class ForumStatisticsMockTest {
-//
-//    private static int testCounter = 0;
-//
-//    @BeforeClass
-//    public static void beforeAllTests() {
-//        System.out.println("This is the beginning of tests.");
-//    }
-//
-//    @AfterClass
-//    public static void afterAllTests() {
-//        System.out.println("All tests are finished");
-//    }
-//
-//    @Before
-//    public void beforeEveryTest() {
-//        testCounter++;
-//        System.out.println("Preparing to execute test #" + testCounter);
-//    }
+package com.kodilla.testing.forum.statistics;
+
+import com.kodilla.testing.forum.statistics.Statistics;
+import com.kodilla.testing.forum.statistics.StatisticsMonitor;
+
+
+import org.junit.*;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class ForumStatisticsMockTest {
+
+    private static int testCounter = 0;
+
+    @BeforeClass
+    public static void beforeAllTests() {
+        System.out.println("This is the beginning of tests.");
+    }
+
+    @AfterClass
+    public static void afterAllTests() {
+        System.out.println("All tests are finished");
+    }
+
+    @Before
+    public void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
+    }
+
+    @Test
+    public void testOnePreview() {
+        // Given
+        Statistics statisticsMock = mock(Statistics.class);
+        ArrayList<String> listOfusers = new ArrayList<>();
+        for(int i = 0; i < 3; i++) {
+            listOfusers.add("user"+i);
+        }
+        when(statisticsMock.usersNames()).thenReturn(listOfusers);
+
+        StatisticsMonitor statisticsMonitor = new StatisticsMonitor(statisticsMock);
+
+        ArrayList<String> listOfPosts = new ArrayList<>();
+        for(int i = 0; i < 9; i++) {
+            listOfPosts.add("post"+i);
+        }
+
+        int posts = listOfPosts.size();
+
+        when(statisticsMock.postsCount()).thenReturn(posts);
+
+        ArrayList<String> listOfComments = new ArrayList<>();
+        for(int i = 0; i < 18; i++) {
+            listOfComments.add("comment"+i);
+        }
+
+        int comments = listOfComments.size();
+
+        when(statisticsMock.commentsCount()).thenReturn(comments);
+
+        // When
+        int users =  listOfusers.size();
+        int numberOfPosts = posts;
+        int numberOfComments = comments;
+
+        // Then
+        Assert.assertEquals("Total posts per user: 3, comments per user: 6, comments per post: 2", statisticsMonitor.calculateAdvStatistics(statisticsMock));
+
+    }
+
+    @Test(expected=java.lang.ArithmeticException.class)
+    public void testOneNoUsers() {
+        // Given
+        Statistics statisticsMock = mock(Statistics.class);
+        ArrayList<String> listOfusers = new ArrayList<>();
+//        for(int i = 0; i < 3; i++) {
+//            listOfusers.add("user"+i);
+//        }
+        when(statisticsMock.usersNames()).thenReturn(listOfusers);
+
+        StatisticsMonitor statisticsMonitor = new StatisticsMonitor(statisticsMock);
+
+        ArrayList<String> listOfPosts = new ArrayList<>();
+        for(int i = 0; i < 9; i++) {
+            listOfPosts.add("post"+i);
+        }
+
+        int posts = listOfPosts.size();
+
+        when(statisticsMock.postsCount()).thenReturn(posts);
+
+        ArrayList<String> listOfComments = new ArrayList<>();
+        for(int i = 0; i < 18; i++) {
+            listOfComments.add("comment"+i);
+        }
+
+        int comments = listOfComments.size();
+
+        when(statisticsMock.commentsCount()).thenReturn(comments);
+
+        // When
+        int users =  listOfusers.size();
+        int numberOfPosts = posts;
+        int numberOfComments = comments;
+
+        // Then
+        Assert.assertEquals("Total posts per user: 0, comments per user: 0, comments per post: 2", statisticsMonitor.calculateAdvStatistics(statisticsMock));
+
+    }
+}
 //
 //    @Test
 //    // users = 3, posts = 0, comments = 6;
