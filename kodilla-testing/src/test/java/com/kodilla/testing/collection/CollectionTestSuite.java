@@ -33,7 +33,6 @@ public class CollectionTestSuite {
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         ArrayList<Integer> input = new ArrayList<>();
 
-
         ArrayList<Integer> expected = new ArrayList<>();
 
         // When
