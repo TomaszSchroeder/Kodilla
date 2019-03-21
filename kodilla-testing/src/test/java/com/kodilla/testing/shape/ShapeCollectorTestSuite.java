@@ -75,24 +75,12 @@ public class ShapeCollectorTestSuite {
         Shape square = new Square(7);
         Shape triangle = new Triangle(6, 6);
         shapeCollector.addFigure(square);
-        shapeCollector.addFigure(triangle);
 
         // When
-        String expected = "Square: 49.0\n" + "Triangle: 18.0\n";
+        String expected = "Square: 49.0\n";
         String output = shapeCollector.showFigures();
 
         // Then
         Assert.assertEquals(expected, output);
-    }
-
-    @Test
-    public void checkField() {
-        // Given
-        Shape square = new Square(5);
-        // When
-        double output = square.getField();
-        double expected = 25;
-        // Then
-        Assert.assertEquals(output, expected, 0.1);
     }
 }
