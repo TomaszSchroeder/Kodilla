@@ -24,8 +24,8 @@ public class ShapeCollector {
 
     public String showFigures() {
         String allShapes="";
-        for(Shape figure : figures) {
-            allShapes += figure.getShapeName()+": " + figure.getField() + "\n";
+        for (Shape figure : figures) {
+            allShapes+= figure.getShapeName()+": "+ figure.getField() +"\n";
         }
         return allShapes;
     }

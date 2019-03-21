@@ -78,7 +78,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(triangle);
 
         // When
-        String expected = "";
+        String expected = "Square: 49.0\n" + "Triangle: 18.0\n";
         String output = shapeCollector.showFigures();
 
         // Then
