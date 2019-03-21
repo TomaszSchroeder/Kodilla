@@ -73,7 +73,6 @@ public class ShapeCollectorTestSuite {
 
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape square = new Square(7);
-        Shape triangle = new Triangle(6, 6);
         shapeCollector.addFigure(square);
 
         // When
