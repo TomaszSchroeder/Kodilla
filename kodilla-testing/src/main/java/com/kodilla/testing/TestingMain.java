@@ -8,6 +8,7 @@ import com.kodilla.testing.user.SimpleUser;
 import com.kodilla.testing.calculator.Calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestingMain {
@@ -42,6 +43,20 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1,2,3,4));
+//        input.add(1);
+//        input.add(2);
+//        input.add(3);
+//        input.add(4);
+        //exterminator.exterminate(input);
+        //ArrayList<Integer> expected = new ArrayList<>(input);
+
+//        expected.add(2);
+//        expected.add(4);
+        // When
+        ArrayList<Integer> output = exterminator.exterminate(input);
+        System.out.println(output);
 
 
     }
