@@ -14,7 +14,6 @@ public class FlightRunner {
         try {
             System.out.println("Flight no.1: from Berlin to Hamburg");
             if (flightSeeker.findFlight(flightOne))
-                System.out.println(flightSeeker.findFlight(flightOne));
             System.out.println("Flight available, please book your ticket(s)");
 
         } catch (RouteNotFoundException e) {
