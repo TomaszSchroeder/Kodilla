@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class RpsRunner {
 
+    public static void main(String[] args) {
+
+        RpsRunner theGame = new RpsRunner();
+        theGame.getPlayerName();
+        theGame.startGame();
+
+    }
+
     public static boolean end = false;
 
     private Player player;
@@ -20,14 +28,6 @@ public class RpsRunner {
         numberOfGames = player.quantityOfGames();
     }
 
-    public static void main(String[] args) {
-
-        RpsRunner theGame = new RpsRunner();
-        theGame.getPlayerName();
-        theGame.startGame();
-
-    }
-
     public void startGame() {
         while (!end) {
 
@@ -41,17 +41,17 @@ public class RpsRunner {
                 switch (checkResult) {
                     case 0:
                         System.out.println("It's a draw!");
-                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU");
+                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU\n");
                         break;
                     case 1:
                         System.out.println(player.getName() + " gets a point");
                         playerScore++;
-                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU");
+                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU\n");
                         break;
                     case -1:
                         System.out.println("CPU gets a point");
                         computerScore++;
-                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU");
+                        System.out.println("Current score: " + player.getName() + " " + playerScore + " : " + computerScore + " CPU\n");
                         break;
                 }
                 if (playerScore == numberOfGames) {
@@ -68,15 +68,10 @@ public class RpsRunner {
                     playAgain();
                 }
 
-//            if(player.playAgain()) {
-//                System.out.println();
-//                startGame();
-//            } else {
-//                break;
-//            }
             }
         }
     }
+
     public void getPlayerName() {
         player.askName();
     }
@@ -87,16 +82,16 @@ public class RpsRunner {
         String decision = scanner.next();
         decision = decision.toUpperCase();
         char key = decision.charAt(0);
-        if(key == 'Y') {
+        if (key == 'Y') {
             RpsRunner theGame = new RpsRunner();
             theGame.getPlayerName();
             theGame.startGame();
-        } else if(key == 'N') {
+        } else if (key == 'N') {
             System.out.println("Thank you for playing with me!");
             System.exit(-1);
         } else
-            System.out.println("Wrong key, try again");
-            playAgain();
+            System.out.println("Wrong key, try again\n");
+        playAgain();
 
     }
 }
