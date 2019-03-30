@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class FlightSeeker {
 
+
+    FlightSeeker flightSeeker;
+
     public boolean findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> airports = new HashMap<>();
 
@@ -25,8 +28,6 @@ public class FlightSeeker {
         boolean arrivalAirportExists = airports.containsKey(arrivalAirport);
         boolean departureAirportExists = airports.containsKey(departureAirport);
 
-        boolean available = airports.containsValue(true);
-
         if (arrivalAirportExists && departureAirportExists) {
             return airports.get(arrivalAirport) && airports.get(departureAirport);
 
@@ -38,12 +39,11 @@ public class FlightSeeker {
                 throw new RouteNotFoundException("Arrival airport don't exist!");
             } else if (!departureAirportExists) {
                 throw new RouteNotFoundException("Departure airport don't exist!");
-            } else if ((arrivalAirportExists && !available) || (departureAirportExists && !available)) {
-                throw new RouteNotFoundException("Airport is closed");
             } else
-
                 throw new RouteNotFoundException("Flight impossible today!");
 
         }
     }
+
+
 }
