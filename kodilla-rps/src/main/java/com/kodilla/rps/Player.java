@@ -12,13 +12,10 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void askName() {
+    public String askName() {
         System.out.println("What's your name?");
-        name = scanner.next();
+        this.name = scanner.next();
+        return this.name;
     }
 
     public int quantityOfGames() {
@@ -43,6 +40,8 @@ public class Player {
         System.out.println("1 - Rock");
         System.out.println("2 - Paper");
         System.out.println("3 - Scissors");
+        System.out.println("4 - Lizard");
+        System.out.println("5 - Spock");
         System.out.println("X - End game");
         System.out.println("N - New Game");
 
@@ -56,6 +55,10 @@ public class Player {
             return Game.paper;
         else if (key == '3')
             return Game.scissors;
+        else if (key == '4')
+            return Game.lizard;
+        else if (key == '5')
+            return Game.spock;
         else if (key == 'X')
             return Game.end;
         else if (key == 'N')
@@ -67,6 +70,9 @@ public class Player {
         }
 
     }
+
+
+
 
 
 }

@@ -6,7 +6,7 @@ public class Computer {
 
     public int getMove() {
         Random random = new Random();
-        int compMove = random.nextInt(3) + 1;
+        int compMove = random.nextInt(5) + 1;
         return compMove;
     }
 }
