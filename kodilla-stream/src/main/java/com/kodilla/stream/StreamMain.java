@@ -2,6 +2,7 @@ package com.kodilla.stream;
 
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
+import com.kodilla.stream.iterate.NumbersGenerator;
 
 import java.time.LocalDate;
 import java.util.Map;
@@ -116,7 +117,7 @@ public class StreamMain {
 //        poemBeautifier.beautify("Another lambda", textToDecorate -> "ABC".concat(textToDecorate.concat("ABC")));
 //        poemBeautifier.beautify("The last one to beautify", textToDecorate -> textToDecorate.substring(4,12));
 //
-//        System.out.println("Using Stream to generate even numbers from 1 to 20");
-//        NumbersGenerator.generateEven(20);
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
     }
 }
