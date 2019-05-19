@@ -1,0 +1,15 @@
+package com.kodilla.patterns.prototype;
+
+public class Task {
+
+    final private String name;
+
+    public Task(final String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "      Task [" + name + "]";
+    }
+}
