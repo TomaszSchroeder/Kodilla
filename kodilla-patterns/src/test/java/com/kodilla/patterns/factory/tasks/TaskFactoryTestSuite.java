@@ -44,5 +44,4 @@ public class TaskFactoryTestSuite {
         Assert.assertEquals(false, driving.isTaskExecuted());
         Assert.assertEquals("Everyday driving", driving.getTaskName());
     }
-
 }
