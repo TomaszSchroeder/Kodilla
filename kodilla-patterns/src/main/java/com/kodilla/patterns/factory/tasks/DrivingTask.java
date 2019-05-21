@@ -2,9 +2,10 @@ package com.kodilla.patterns.factory.tasks;
 
 public class DrivingTask implements Task {
 
-    final String taskName;
-    final String where;
-    final String using;
+    private String taskName;
+    private String where;
+    private String using;
+    private boolean tickedOff;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -13,23 +14,20 @@ public class DrivingTask implements Task {
     }
 
     @Override
-    public String executeTask() {
-        return where;
+    public void executeTask() {
+
+        tickedOff = true;
     }
 
     @Override
     public String getTaskName() {
+
         return taskName;
     }
 
     @Override
-    public boolean isTaskExecuted(boolean tickedOff) {
-        if(tickedOff) {
-            System.out.println("Done");
-            return true;
-        } else {
-            System.out.println("Not done yet");
-            return false;
-        }
+    public boolean isTaskExecuted() {
+
+        return tickedOff;
     }
 }

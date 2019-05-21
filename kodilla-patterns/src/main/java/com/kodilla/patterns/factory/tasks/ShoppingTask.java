@@ -2,9 +2,10 @@ package com.kodilla.patterns.factory.tasks;
 
 public class ShoppingTask implements Task {
 
-    final String taskName;
-    final String whatToBuy;
-    final double quantity;
+    private String taskName;
+    private String whatToBuy;
+    private double quantity;
+    private boolean tickedOff = false;
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
@@ -13,8 +14,9 @@ public class ShoppingTask implements Task {
     }
 
     @Override
-    public String executeTask() {
-        return whatToBuy;
+    public void executeTask() {
+
+        tickedOff = true;
     }
 
     @Override
@@ -23,13 +25,9 @@ public class ShoppingTask implements Task {
     }
 
     @Override
-    public boolean isTaskExecuted(boolean tickedOff) {
-        if(tickedOff) {
-            System.out.println("Done");
-            return true;
-        } else {
-            System.out.println("Not done yet");
-            return false;
-        }
+    public boolean isTaskExecuted() {
+
+        return tickedOff;
     }
 }
+

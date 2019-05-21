@@ -2,9 +2,10 @@ package com.kodilla.patterns.factory.tasks;
 
 public class PaintingTask implements Task {
 
-    final String taskName;
-    final String color;
-    final String whatToPaint;
+    private String taskName;
+    private String color;
+    private String whatToPaint;
+    private boolean tickedOff = false;
 
     public PaintingTask(String taskName, String color, String whatToPaint) {
         this.taskName = taskName;
@@ -13,8 +14,9 @@ public class PaintingTask implements Task {
     }
 
     @Override
-    public String executeTask() {
-        return whatToPaint;
+    public void executeTask() {
+
+        tickedOff = true;
     }
 
     @Override
@@ -23,13 +25,8 @@ public class PaintingTask implements Task {
     }
 
     @Override
-    public boolean isTaskExecuted(boolean tickedOff) {
-        if(tickedOff) {
-            System.out.println("Done");
-            return true;
-        } else {
-            System.out.println("Not done yet");
-            return false;
-        }
+    public boolean isTaskExecuted() {
+
+        return tickedOff;
     }
 }
