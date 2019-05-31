@@ -14,8 +14,8 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
 
         // When
-        String taskOne = "Some task to do ASAP";
-        String taskTwo = "I'm doing this task right now";
+        String taskOne = "Some com.kodilla.hibernate.task to do ASAP";
+        String taskTwo = "I'm doing this com.kodilla.hibernate.task right now";
         String taskThree = "Done it!";
 
         board.getToDoList().addTask(taskOne);
@@ -23,8 +23,8 @@ public class BoardTestSuite {
         board.getDoneList().addTask(taskThree);
 
         // Then
-        Assert.assertEquals("Some task to do ASAP", board.getToDoList().getTasks().get(0));
-        Assert.assertEquals("I'm doing this task right now", board.getInProgressList().getTasks().get(0));
+        Assert.assertEquals("Some com.kodilla.hibernate.task to do ASAP", board.getToDoList().getTasks().get(0));
+        Assert.assertEquals("I'm doing this com.kodilla.hibernate.task right now", board.getInProgressList().getTasks().get(0));
         Assert.assertEquals("Done it!", board.getDoneList().getTasks().get(0));
         Assert.assertTrue(board.getToDoList().addTask(taskOne));
         Assert.assertTrue(board.getInProgressList().addTask(taskTwo));
