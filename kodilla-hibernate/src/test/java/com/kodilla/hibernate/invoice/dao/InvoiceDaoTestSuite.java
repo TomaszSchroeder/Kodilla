@@ -42,7 +42,7 @@ public class InvoiceDaoTestSuite {
         Item item4 = new Item(product4, new BigDecimal(4), 3);
         Item item5 = new Item(product5, new BigDecimal(5), 2);
 
-        Invoice invoice = new Invoice("FV 1/2019");
+        Invoice invoice = new Invoice("FV 2/2019");
         invoice.setItems(Arrays.asList(item1, item2, item3, item4, item5));
 
         // When
