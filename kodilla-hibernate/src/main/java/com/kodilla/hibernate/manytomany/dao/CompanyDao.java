@@ -12,7 +12,10 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
-    @Query(nativeQuery = true)
+    @Query
     List<Company> searchCompaniesByFirstThreeLetters(@Param("TAG") String prefix);
+
+    @Query
+    List<Company> searchByAnyNameFragment(@Param("ARG") String any);
 
 }

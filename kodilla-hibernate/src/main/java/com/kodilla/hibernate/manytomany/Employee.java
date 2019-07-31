@@ -1,7 +1,5 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.springframework.data.jpa.repository.Query;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -10,6 +8,11 @@ import java.util.List;
 @NamedQuery(
         name = "Employee.searchEmployeesBySpecificName",
         query = "FROM Employee WHERE lastname = :LASTNAME"
+)
+
+@NamedQuery(
+        name = "Employee.searchByAnyNameFragment",
+        query = "FROM Employee WHERE lastname LIKE :ARG"
 )
 
 @Entity
