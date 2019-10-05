@@ -14,7 +14,7 @@ public class DbManager {
         Properties connectionProps = new Properties();
         connectionProps.put("user", "kodilla_user");
         connectionProps.put("password", "abc");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" + "&useSSL=False", connectionProps);
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kodibooks?serverTimezone=Europe/Warsaw" + "&useSSL=False", connectionProps);
     }
 
     public static DbManager getInstance() throws SQLException {
